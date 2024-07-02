@@ -1,6 +1,7 @@
 # don't upload data files
 *.csv
 data/_archive/
+notebooks/01_data_processing/data/
 my_files/
 real_data/
 tm_images/
