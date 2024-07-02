@@ -1,9 +1,10 @@
 # don't upload data files
 *.csv
-data/
+data/_archive/
 my_files/
 real_data/
 tm_images/
 # Jupyter Notebook
 .ipynb_checkpoints
 .DS_Store
+*.pptx
