@@ -7,9 +7,9 @@ from tensorflow.keras.models import load_model
 # Create a title
 st.title('SignLingual - A Machine Learning Translator App for ASL')
 
-@st.cache(allow_output_mutation=True)
+@st.cache_resource()
 def load_model():
-  model=tf.keras.models.load_model('../../model/my_files/my_ResNet_model.h5')
+  model=tf.keras.models.load_model('../model/my_files/top_up_VGG.h5')
   return model
 
 model = load_model()
