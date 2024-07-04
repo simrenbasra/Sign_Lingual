@@ -9,6 +9,8 @@ my_files/
 real_data/
 tm_images/
 real_world_imgs/
+my_models/
+
 # Jupyter Notebook
 .ipynb_checkpoints
 .DS_Store
