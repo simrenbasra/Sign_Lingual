@@ -1,75 +1,61 @@
-# SignLingual: Action Plan
-
-### Contents
-
-1. [Overview](#overview)
-2. [Methodology](#methodology)
-3. [Data Collection](#data-collection)
-4. [Data Preprocessing](#data-preprocessing)
-5. [Model Development](#model-development)
-6. [Model Evaluation](#model-evaluation)
-7. [Deployment](#deployment)
-8. [Future Work](#future-work)
-9. [Conclusion](#conclusion)
-
+ SignLingual: Logistic Regression
 ---
 
 ## Overview
 
-This README outlines the action plan for building a machine learning translator for MNIST ASL dataset.
+In this section, I will be building four Logistic Regression models:
 
-## Outline
+1. Baseline Logistic Regression model:
+    - Uses raw pixel values as features without any additional preprocessing.
 
-In this project I will focus on building the following models:
+2. Logistic Regression model with Feature Extraction (HOG/LBP)
+    - Manually extracting features using Histogram of Oriented Gradients (HOG), Local Binary Patterns (LBP) and Colour Histograms before feeding them into the Logistic Regression model.
 
- - Logistic Regression Models
- - Convolutional Neural Network (CNN)
- - Transfer learning usifn ResNet50 and VGG16
+3. Baseline Logistic Regression model with Augmented Data
+    - Same baseline model but now the model is trained on augmented versions of the original dataset,
+    - Data augmentation includes variations of the original images such as rotation and horizontal flips to improve models generalisation.
 
-1. Logisitc Regression
-
-    - Begin by building a baseline Logistic Regression model using pixel intensities from the MNIST data to be my fetaures
-    - Utilise feature extrraction techniques such as HOG, LBP and Colour Histograms to create feature vectors for each image
-    - Develop a Logistic Regression Model based on these feature vectors
-    - Use data augmentation techniques to assess the ability for both Logistic Regression models to generalise to 'real' data
-
-2. Convolutional Neural Network (CNN)
-
-    - Build a CNN using Fucntional API
-    - Extract weights and feature map for each convoluted layer to gain some insight as to what the network is learning
-    - Use data augmentation techniques to assess the ability for CNN to generalise to 'real' data
-
-3. Transfer Learning 
-
-    - Utilsie VGG16 and ResNet50 by first assessing the accuracy of these pre-trained models on the MNIST dataset as is
-    - Assess performance when data is augmented
-    - Perform fine-tuning on dataset which I capture using Teachable Machine
+4. Logistic Regression model with Feature Extraction and Augmetented Data
+    - Combines feature extraction using HOG/LBP with training on augmented data.
 
 ## Data Collection
-          
 
-    
-
-## Data Preprocessing
-
-
-
-## Model Development
-
-
+Using data collected from 01_data_processing, to get further details about the data please refer to README in data folder.
 
 ## Model Evaluation
 
+**Without data augmentation:**
 
+|                  | Logistic Regression Model  | Logistic Regression Model with Feature Extraction |
+|------------------|----------------------------|---------------------------------------------------|
+| Train Score      | 99.99                      | 99.03                                             |
+| Validation Score | 99.99                      | 98.86                                             |
 
-## Deployment
+**With data augmentation:**
 
-
-
-## Future Work
-
+|                  | Logistic Regression Model  | Logistic Regression Model with Feature Extraction |
+|------------------|----------------------------|---------------------------------------------------|
+| Train Score      | 31.72                      | 48.11                                             |
+| Validation Score | 25.82                      | 58.60                                             |
 
 
 ## Conclusion
+
+1. Baseline Logistic Regression Model:
+
+    - Without Augmentation: Both baseline model achieved high training and validation scores, indicating strong performance on the original dataset without overfitting.
+
+    - With Augmentation: Performance significantly dropped for the baseline model, highlighting difficulties in generalisation with augmented data. 
+
+2. Logistic Regression Model with Feature Extraction:
+
+    - Without Augmentation: High performance demonstrating the effectiveness of HOG/LBP methods.
+    
+    - With Augmentation: Improved performance over the baseline model, indicating better handling of variability introduced by augmentation.
+    
+Key Findings:
+
+Feature extraction methods like HOG and LBP provide the logistic regression with more meaningful features and so help the model generalise better.
+Simpler models such as logistic regression struggle with augmented data however manually extracting features using HOG/LBP can help to an extent.
 
 
