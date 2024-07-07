@@ -1,5 +1,5 @@
 
-#  SignLingual: Pickled Model Files
+SignLingual: Pickled Model Files
 ---
 All the pickled model files are stored in a single folder on Google Drive. 
 Below is the list of these model files available in the folder:
