@@ -10,34 +10,47 @@ The main purpose of my project would be to break communication barriers between 
 
 ### Proposed Solution
 
-In this project, I will use the following three models to tackle this problem and will conduct a comparison to see which model performs best:
+In this project, I will use the following five approaches to tackle this problem and will conduct a comparison to see which model performs best:
 
     - Logistic Regression
     - Logistic Regression with Feature Extraction
     - Convolutional Neural Network (CNN)
+    - VGG(16) [Tranfer Learning]
+    - ResNet(50) [Tranfer Learning]
 
 To begin my analysis I will use MNIST dataset which is clean dataset where every image is centered and there is little 'noise'. I will then augment this data using Keras to see how each model performs when noise is introduced. 
 
 On building my models, I will attempt to uncover how each model 'learns' which features are key identifiers for specific classes (letters).
-To conclude, I will assess the performance of each of these models and assess which letters the models misclassify the most and why. I will also identify which model handles data augmentation the best and see if these results differ from non-augmented data.
+
+To conclude, I will assess the performance of each of these models using data from the real world.
 
 ### Dataset Description 
-1400 images for each letter in alphabet, there is no image data for letters j and z as they are moving sign (not image).
+Working with two datasets:
+    
+    1. MNIST Sign Langauge dataset from openml
+        - 1400 images for each letter in alphabet, there is no image data for letters j and z as they are moving sign (not image).
+
+    2. Real World Images
+        - Images I have captured using teachable machine
 
 ### Organization
 
 #### Repository 
 
+* `app`
+    - streamlit python file used as a demo for my project
+    - demo uses fine tuned VGG model to make predictions
+
 * `data` 
     - contains link to copy of the dataset (stored in a publicly accessible Google Drive folder)
-    - saved copy of aggregated / processed data as long as those are not too large (> 10 MB)
 
 * `model`
-    - joblib dump of final model / model object
+    - pikled files of all models
 
 * `notebooks`
     - contains all final notebooks involved in the project
     - notebooks are broken up into sub folders:
+
         - data processing: Loading and processing of MNIST data
                            Data augmentation of MNIST data
         - logistic regression: Basic logistic regression model
@@ -46,11 +59,18 @@ To conclude, I will assess the performance of each of these models and assess wh
                                Logistic regression model with feature extraction with data augmentation
         - CNN: Basic CNN model
                Basic CNN model with data augmentaion
-        - Model Evaluation: Include an analysis of the models built (to be built at later date)
-        - my files: to store pikl/kera/jpg objects
+        - Transfer Learning: Basic VGG 
+                             Basic ResNet
+                             VGG with data augmentation
+                             ResNet with data augmentation   
+                             Fine tuning of VGG
+                             Fine tuning of ResNet
+        - Model Evaluation: Include an evaluation of models on the real world dataset (apart from the transfer learning models)
 
 * `docs`
-    - contains final report which summarises the project
+    - contains final presenations of project
+    - contains images of cnn and vgg architecture
+    - contains project overview 
 
 * `references`
     - contains papers / tutorials used in the project
@@ -75,7 +95,7 @@ To conclude, I will assess the performance of each of these models and assess wh
 
 #### Dataset
 
-... Google Drive links to datasets and pickeled models
+For more information on the data and models, please refer to the README in the data folder and model folder
 
 ### Credits & References
 
